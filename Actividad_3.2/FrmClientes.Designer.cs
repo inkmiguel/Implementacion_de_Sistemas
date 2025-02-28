@@ -46,7 +46,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtTotalTodos = new System.Windows.Forms.TextBox();
+            this.txtTotalClientes = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -192,6 +192,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(783, 232);
             this.dataGridView1.TabIndex = 15;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // btnImprimir
             // 
@@ -212,12 +213,12 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Total de Ordenes de Cliente";
             // 
-            // txtTotalTodos
+            // txtTotalClientes
             // 
-            this.txtTotalTodos.Location = new System.Drawing.Point(203, 250);
-            this.txtTotalTodos.Name = "txtTotalTodos";
-            this.txtTotalTodos.Size = new System.Drawing.Size(479, 22);
-            this.txtTotalTodos.TabIndex = 18;
+            this.txtTotalClientes.Location = new System.Drawing.Point(203, 250);
+            this.txtTotalClientes.Name = "txtTotalClientes";
+            this.txtTotalClientes.Size = new System.Drawing.Size(479, 22);
+            this.txtTotalClientes.TabIndex = 18;
             // 
             // textBox2
             // 
@@ -242,7 +243,7 @@
             this.ClientSize = new System.Drawing.Size(807, 588);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.txtTotalTodos);
+            this.Controls.Add(this.txtTotalClientes);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.dataGridView1);
@@ -290,7 +291,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtTotalTodos;
+        private System.Windows.Forms.TextBox txtTotalClientes;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label7;
     }

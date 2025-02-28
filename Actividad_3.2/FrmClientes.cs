@@ -58,7 +58,8 @@ namespace ConexionSQL
         private void Clientes_Load(object sender, EventArgs e)
         {
             //Cargar la informacion de todos los clientes registrados cuando se abre la pantalla
-            this.dataGridView1.DataSource = GetData("GetAllCustomersOrdered");
+            this.dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.DataSource = GetData("EXEC GetAllCustomersOrdered");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -139,18 +140,7 @@ namespace ConexionSQL
         }        
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(this.dataGridView1.Rows.Count > 0)
-            {
-               this.txtIdCliente.Text = this.dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
-               this.txtCompañia.Text = this.dataGridView1.SelectedRows[1].Cells[1].Value.ToString();
-               this.txtContacto.Text = this.dataGridView1.SelectedRows[2].Cells[2].Value.ToString();
-               this.txtCiudad.Text = this.dataGridView1.SelectedRows[3].Cells[3].Value.ToString();
-               this.txtTelefono.Text = this.dataGridView1.SelectedRows[4].Cells[4].Value.ToString();
-
-                this.txtIdCliente.Enabled = false;
-                this.btnGuardar .Enabled = false;
-                this.btnEditar.Enabled = true;
-            }
+         
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -166,15 +156,40 @@ namespace ConexionSQL
         public void SumaTotalOrdenes()
         {
             Int64 Total = 0;
-            foreach(DataGridViewRow row in this.dataGridView1.Rows) {
-                Total += Convert.ToInt64(row.Cells["TotalOrdenes"].Value);
+            foreach (DataGridViewRow row in this.dataGridView1.Rows)
+            {
+                if (row.Cells["TotalOrdenes"].Value != null)
+                {
+                    Total += Convert.ToInt64(row.Cells["TotalOrdenes"].Value);
+                }
             }
-            this.txtTotalTodos.Text = Convert.ToString(Total);
+            this.txtTotalClientes.Text = Total.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dataGridView1.Rows.Count > 0 && e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+
+                this.txtIdCliente.Text = row.Cells[0].Value?.ToString() ?? "";
+                this.txtCompañia.Text = row.Cells[1].Value?.ToString() ?? "";
+                this.txtContacto.Text = row.Cells[2].Value?.ToString() ?? "";
+                this.txtCiudad.Text = row.Cells[3].Value?.ToString() ?? "";
+                this.txtTelefono.Text = row.Cells[4].Value?.ToString() ?? "";
+                this.txtTotalClientes.Text = row.Cells[5].Value?.ToString() ?? "";
+
+                SumaTotalOrdenes();
+
+                this.txtIdCliente.Enabled = false;
+                this.btnGuardar.Enabled = false;
+                this.btnEditar.Enabled = true;
+            }
         }
     }
 }
