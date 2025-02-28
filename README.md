@@ -11,8 +11,10 @@ que encuentren el archivo Actividad_3.2.sin, este le dan doble click y se va a a
 la carpeta y deberia de cargar)
 
 --⚠️Para que el programa funcione, necesitas cambiar la direccion de tu base de datos de SQL Server⚠️
+
 --⚠️Estos pasos son opcionales, puedes cambiarlos con tus propias variables, pero son recomendaciones para que el programa se
 ejecute sin necesidad de tantos cambios⚠️
-  --La tabla de usuarios en Northwind debe llamarse "Usuario" con sus respectivos campos ID_Usuario, Nombre
+  --La tabla de usuarios en Northwind debe llamarse "Usuario" con sus respectivos campos ID_Usuario, Nombre,
   Apellido, Login , Password
   --El procedimiento almacenado debe llamarse GetAllCustomersOrdered
+--si no se tienen estos nombres entonces cambialos por los que crearon en SQL Server
