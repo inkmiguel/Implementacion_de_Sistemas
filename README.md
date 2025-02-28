@@ -1,8 +1,9 @@
 --Actividad / Proyecto de C# & SQL--
 
-⚠️Favor de cambiar o de preferencia ELMININAR la imagen del Login y cada uno meterle su estilo⚠️
+⚠️Favor de cambiar o de preferencia ELMININAR la imagen del Login y cada uno meterle su estilo para que 
+no se note que lo bajaron de aqui⚠️
 
-El proyecto va hasta la semana 7 Diapositiva 1
+El proyecto va al corriente (Semana 7)
 
 --Para que el codigo funcione, copian el archivo comprimido, se van al disco donde esta el sistema operativo,
 -> Usuario -> Seleccionan su usuario -> source, una vez aqui pegan y descomprimen el archivo, abren la carpeta hasta
